@@ -45,5 +45,5 @@ class Invoice(models.Model):
 		)
 	invoice_type = models.CharField(max_length=50, default='', blank=True, null=True, choices=invoice_type_choice)
 
-	def __unicode__(self):
-		return self.invoice_number
+	def __str__(self):
+		return self.name
