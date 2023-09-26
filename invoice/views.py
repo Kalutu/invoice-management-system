@@ -55,3 +55,10 @@ def update_invoice(request, pk):
 		'form':form
 	}
 	return render(request, 'entry.html', context)
+
+def delete_invoice(request, pk):
+	queryset = Invoice.objects.get(id=pk)
+	if request.method == 'POST':
+		queryset.delete()
+		return redirect('/list')
+	return render(request, 'delete.html')
