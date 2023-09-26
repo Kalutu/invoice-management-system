@@ -1,9 +1,17 @@
 body {
-	background-color: #eb4634;
+	background-color: #bbb;
 }
 
 .myClass{
 	text-align: center;
 	border-width: 1px;
 	border-style: solid;
+}
+
+label.form-check-label{
+    margin-top: 45px;
+}
+
+#id_paid{
+    margin-top: 50px;
 }

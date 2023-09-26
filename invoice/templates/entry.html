@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load bootstrap5 %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +8,17 @@
 	<link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
-	<form method='POST' action=''>{% csrf_token %}
-		{{form}}
-        <input type="submit" value='Save'/>
+	<h1 class="text-center">{{title}}</h1>
+	<form method='POST' action=''>
+		{% csrf_token %}
+		<div class="row">	
+			{% for field in form %}
+			<div class="col-sm-6">
+				{%	bootstrap_field field %}
+			</div>
+			{% endfor %}				
+		</div>
+		<input class="btn btn-primary" type="submit" value='Save'/>
     </form>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
