@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List of Invoices</title>
+</head>
+<body>
+	{{title}}
+	<br>
+	{% for instance in queryset %}
+	{{instance.invoice_date}}
+	{{instance.name}},
+	{{instance.invoice_number}},
+	{{instance.invoice_type}}, 
+	{{instance.line_one_total_price}}
+	<br>
+
+	{% endfor %}
+	
+
+</body>

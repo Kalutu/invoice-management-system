@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import InvoiceForm
-
+from .models import Invoice
 
 # Create your views here.
 def home(request):
@@ -19,3 +19,12 @@ def add_invoice(request):
 		"title": "New Invoice",
 	}
 	return render(request, "entry.html", context)
+
+def list_invoice(request):
+	title = 'List of Invoices'
+	queryset = Invoice.objects.all()
+	context = {
+		"title": title,
+		"queryset": queryset,
+	}
+	return render(request, "list.html", context)
