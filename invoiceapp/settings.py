@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'invoiceapp',
     'invoice',
+    'bootstrap5'
 ]
 
 MIDDLEWARE = [

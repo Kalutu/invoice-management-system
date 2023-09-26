@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +9,18 @@
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
-    <h1>Home page</h1>
+    <h1>{{title}}</h1>
+
+    <button class="btn btn-danger">Click Me</button>
+
+    <div class="row">
+        <div class="col-sm-6 myClass">
+            test 1
+        </div>
+        
+        <div class="col-sm-6 myClass">
+            test2
+        </div>
+    </div>
 </body>
 </html>
