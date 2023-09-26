@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import InvoiceForm
 from .models import Invoice
 
@@ -14,6 +14,7 @@ def add_invoice(request):
 	form = InvoiceForm(request.POST or None)
 	if form.is_valid():
 		form.save()
+		return redirect('list')
 	context = {
 		"form": form,
 		"title": "New Invoice",
