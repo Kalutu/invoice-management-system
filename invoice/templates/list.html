@@ -34,11 +34,11 @@
           <tr>
             <td>{{forloop.counter}}</td>
             <td>{{instance.invoice_date}}</td>
-            <td>{{instance.name}}</td>
+            <td><a href="{% url 'update' instance.id %}">{{instance.name}}</a></td>
             <td>{{instance.invoice_number}}</td>
             <td>{{instance.total}}</td>
           </tr>
       {% endfor %}
     </table>
-	
+    
 {% endblock%}

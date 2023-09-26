@@ -41,3 +41,17 @@ def list_invoice(request):
 			"queryset": queryset,
 		}
 	return render(request, "list.html", context)
+
+def update_invoice(request, pk):
+	queryset = Invoice.objects.get(id=pk)
+	form = InvoiceUpdateForm(instance=queryset)
+	if request.method == 'POST':
+		form = InvoiceUpdateForm(request.POST, instance=queryset)
+		if form.is_valid():
+			form.save()
+			return redirect('list')
+
+	context = {
+		'form':form
+	}
+	return render(request, 'entry.html', context)

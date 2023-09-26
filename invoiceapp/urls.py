@@ -23,4 +23,5 @@ urlpatterns = [
     path('', home),
     path('add/', add_invoice, name='add'),
     path('list/', list_invoice, name='list'),
+    path('update/<str:pk>/', update_invoice, name="update"),
 ]
