@@ -1,8 +1,24 @@
 {% extends 'base.html' %}
+{% load bootstrap5 %}
 
 {% block content %}
 
 	<h1 class="text-center">{{title}}</h1>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="row m-5">
+      {% for field in form %}
+      <div class="col-sm-5">
+        {% bootstrap_field field %}
+      </div>
+      {% endfor %}
+      <div class="col-sm-2">
+        <input class="btn btn-primary mt-4" type="submit" value="Search">
+      </div>
+    </div>
+  </form>
+
 
 	<table class='table'>
         <thead>
