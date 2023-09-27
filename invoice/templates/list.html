@@ -15,11 +15,11 @@
     {% csrf_token %}
     <div class="row m-5">
       {% for field in form %}
-      <div class="col-sm-5">
+      <div class="col-sm-3">
         {% bootstrap_field field %}
       </div>
       {% endfor %}
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <input class="btn btn-primary mt-4" type="submit" value="Search">
       </div>
     </div>
