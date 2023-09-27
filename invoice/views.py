@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
-	title = 'Welcome: This is the Home Page'
+	title = 'Invoice Management System'
 	context = {
 	"title": title,
 	}
