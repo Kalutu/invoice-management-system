@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
-    <h1>{{title}}</h1>
-
+    <div class="text-center">
+        <h1 class="title mb-5">{{title}}</h1>
+        <img height="500px" src="{% static 'img/invoice.jpg' %}" alt="">
+    </div>
+    
     <div class="jumbotron">
         <div class="row">
           <div class="col-sm-4">
