@@ -38,3 +38,7 @@ label.form-check-label{
 	color: white;
 	text-align: center;
 }
+
+.form-check-input {
+	margin-top: 50px;
+}
