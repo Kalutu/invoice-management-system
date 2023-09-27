@@ -14,9 +14,14 @@
 </head>
 <body>
     <nav>
+        {% if request.user.is_authenticated %}
         <li><a href="/">Home</a></li>
         <li><a href="/list">List Invoices</a></li>
         <li><a href="/add">Add Invoices</a></li>
+        <a href="/accounts/logout"><button class="btn btn-danger">{{ user }} | Logout</button></a>
+        {% else %}
+        <a href="/accounts/login"><button class="btn btn-danger">Login</button></a>
+        {% endif %}
     </nav>
 
     {% block content %}

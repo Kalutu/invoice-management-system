@@ -8,7 +8,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib.pagesizes import landscape
 from reportlab.platypus import Image
 # End for report lab
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -18,6 +18,7 @@ def home(request):
 	}
 	return render(request, "home.html",context)
 
+@login_required
 def add_invoice(request):
 	form = InvoiceForm(request.POST or None)
 	total_invoices = Invoice.objects.count()
@@ -166,6 +167,7 @@ def list_invoice(request):
 				import_data(data_file)
 	return render(request, "list.html", context)
 
+@login_required
 def update_invoice(request, pk):
 	queryset = Invoice.objects.get(id=pk)
 	form = InvoiceUpdateForm(instance=queryset)
@@ -181,6 +183,7 @@ def update_invoice(request, pk):
 	}
 	return render(request, 'entry.html', context)
 
+@login_required
 def delete_invoice(request, pk):
 	queryset = Invoice.objects.get(id=pk)
 	if request.method == 'POST':
