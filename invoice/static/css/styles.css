@@ -31,3 +31,10 @@ label.form-check-label{
 .table tr:nth-child(even){
 	background: #dae5f4
 }
+
+.success{
+	list-style: none;
+	background-color: #2e6da4;
+	color: white;
+	text-align: center;
+}

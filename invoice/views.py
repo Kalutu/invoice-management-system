@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import Invoice
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -14,6 +15,7 @@ def add_invoice(request):
 	form = InvoiceForm(request.POST or None)
 	if form.is_valid():
 		form.save()
+		messages.success(request, 'Successfully Saved')
 		return redirect('list')
 	context = {
 		"form": form,
@@ -49,6 +51,7 @@ def update_invoice(request, pk):
 		form = InvoiceUpdateForm(request.POST, instance=queryset)
 		if form.is_valid():
 			form.save()
+			messages.success(request, 'Successfully Updated')
 			return redirect('list')
 
 	context = {
@@ -60,5 +63,6 @@ def delete_invoice(request, pk):
 	queryset = Invoice.objects.get(id=pk)
 	if request.method == 'POST':
 		queryset.delete()
+		messages.success(request, 'Successfully Deleted')
 		return redirect('/list')
 	return render(request, 'delete.html')
