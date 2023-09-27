@@ -4,17 +4,33 @@
 {% block content %}
 
 	<h1 class="text-center">{{title}}</h1>
-	
-	<form method='POST' action=''>
-		{% csrf_token %}
-		<div class="row">	
-			{% for field in form %}
-			<div class="col-sm-6">
-				{%	bootstrap_field field %}
-			</div>
-			{% endfor %}				
+
+	<div class="row m-5">	
+		<div class="col-sm-7">
+			<form method='POST' action=''>
+				{% csrf_token %}
+				
+					{% for field in form %}
+					
+						{%	bootstrap_field field %}
+					
+					{% endfor %}				
+				
+				<input class="btn btn-primary" type="submit" value='Save'/>
+			</form>
 		</div>
-		<input class="btn btn-primary" type="submit" value='Save'/>
-    </form>
+		<div class="recent col-sm-5">
+			<span class="">Recent invoices</span>
+			<span class="">{{total_invoices}}</span>
+			<br><br>
+			{% for instance in queryset %}
+				<div>
+					<div class="">{{instance.name}}</div>
+					<div class="">{{instance.invoice_date}}</div>
+				</div>
+				<div class="">${{instance.total}}</div><br>
+			{% endfor %}
+		</div>
+	</div>
 	
 {% endblock %}
