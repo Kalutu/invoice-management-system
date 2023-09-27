@@ -32,6 +32,31 @@ class Invoice(models.Model):
 	line_five_unit_price = models.IntegerField('Unit Price (D)', default=0, blank=True, null=True)
 	line_five_total_price = models.IntegerField('Line Total (D)', default=0, blank=True, null=True)
 
+	line_six = models.CharField('Line 6', max_length=120, default='', blank=True, null=True)
+	line_six_quantity = models.IntegerField('Quantity', default=0, blank=True, null=True)
+	line_six_unit_price = models.IntegerField('Unit Price (D)', default=0, blank=True, null=True)
+	line_six_total_price = models.IntegerField('Line Total (D)', default=0, blank=True, null=True)
+
+	line_seven = models.CharField('Line 7', max_length=120, default='', blank=True, null=True)
+	line_seven_quantity = models.IntegerField('Quantity', default=0, blank=True, null=True)
+	line_seven_unit_price = models.IntegerField('Unit Price (D)', default=0, blank=True, null=True)
+	line_seven_total_price = models.IntegerField('Line Total (D)', default=0, blank=True, null=True)
+
+	line_eight = models.CharField('Line 8', max_length=120, default='', blank=True, null=True)
+	line_eight_quantity = models.IntegerField('Quantity', default=0, blank=True, null=True)
+	line_eight_unit_price = models.IntegerField('Unit Price (D)', default=0, blank=True, null=True)
+	line_eight_total_price = models.IntegerField('Line Total (D)', default=0, blank=True, null=True)
+
+	line_nine = models.CharField('Line 9', max_length=120, default='', blank=True, null=True)
+	line_nine_quantity = models.IntegerField('Quantity', default=0, blank=True, null=True)
+	line_nine_unit_price = models.IntegerField('Unit Price (D)', default=0, blank=True, null=True)
+	line_nine_total_price = models.IntegerField('Line Total (D)', default=0, blank=True, null=True)
+
+	line_ten = models.CharField('Line 10', max_length=120, default='', blank=True, null=True)
+	line_ten_quantity = models.IntegerField('Quantity', default=0, blank=True, null=True)
+	line_ten_unit_price = models.IntegerField('Unit Price (D)', default=0, blank=True, null=True)
+	line_ten_total_price = models.IntegerField('Line Total (D)', default=0, blank=True, null=True)
+
 	phone_number = models.CharField(max_length=120, default='', blank=True, null=True)
 	total = models.IntegerField(default='0', blank=True, null=True)
 	balance = models.IntegerField(default='0', blank=True, null=True)
