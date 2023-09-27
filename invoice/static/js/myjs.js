@@ -1,7 +1,3 @@
 $(document).ready(function(){
-  
-    alert("We are all set!");
-  
-   
-   
-  });
+    console.log("We are all set!");
+});
