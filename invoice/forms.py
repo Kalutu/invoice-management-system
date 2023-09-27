@@ -5,8 +5,7 @@ class InvoiceForm(forms.ModelForm):
 	class Meta:
 		model = Invoice
 		fields = ['name', 'phone_number', 'invoice_date','invoice_number',
-				'line_one', 'line_one_quantity', 'line_one_unit_price', 'line_one_total_price',
-				'total', 'invoice_type', 'paid'
+				'item', 'quantity', 'unit_price', 'total_price', 'invoice_type', 'paid'
 				]
 
 
@@ -30,10 +29,10 @@ class InvoiceSearchForm(forms.ModelForm):
 class InvoiceUpdateForm(forms.ModelForm):
 	class Meta:
 		model = Invoice
-		fields =  ['name', 'phone_number', 'invoice_date','invoice_number',
-				'line_one', 'line_one_quantity', 'line_one_unit_price',
-				'total', 'invoice_type', 'paid'
+		fields = ['name', 'phone_number', 'invoice_date','invoice_number',
+				'item', 'quantity', 'unit_price', 'total_price', 'invoice_type', 'paid'
 				]
+		
 		def clean_invoice_number(self):
 			invoice_number = self.cleaned_data.get('invoice_number')
 			if not invoice_number:

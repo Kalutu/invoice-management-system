@@ -34,6 +34,7 @@
             <th>CUSTOMER NAME</th>
             <th>INVOICE NUMBER</th>
             <th>AMOUNT</th>
+            <th>PAID</th>
             <th>ACTION</th>
           </tr>
         </thead>
@@ -43,7 +44,8 @@
             <td>{{instance.invoice_date}}</td>
             <td><a href="{% url 'update' instance.id %}">{{instance.name}}</a></td>
             <td>{{instance.invoice_number}}</td>
-            <td>{{instance.total}}</td>
+            <td>{{instance.total_price}}</td>
+            <td>{{instance.paid}}</td>
             <td><a href="{% url 'delete' instance.id %}">Delete</a></td>
             
           </tr>
