@@ -20,15 +20,17 @@
 			</form>
 		</div>
 		<div class="recent col-sm-5">
-			<span class="">Recent invoices</span>
-			<span class="">{{total_invoices}}</span>
-			<br><br>
+			<div class="text-center display-6">
+				<span>Recent invoices: </span>
+				<span class="text-primary">{{total_invoices}}</span>
+			</div>
+			
 			{% for instance in queryset %}
-				<div>
-					<div class="">{{instance.name}}</div>
-					<div class="">{{instance.invoice_date}}</div>
+				<div class="card m-3">
+					<div class="p-2">{{instance.name}}</div>
+					<div class="p-2">{{instance.invoice_date}}</div>
+					<div class="p-2">${{instance.total}}</div><br>
 				</div>
-				<div class="">${{instance.total}}</div><br>
 			{% endfor %}
 		</div>
 	</div>

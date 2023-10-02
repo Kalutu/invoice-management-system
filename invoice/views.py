@@ -22,7 +22,7 @@ def home(request):
 def add_invoice(request):
 	form = InvoiceForm(request.POST or None)
 	total_invoices = Invoice.objects.count()
-	queryset = Invoice.objects.order_by('-invoice_date')[:6]
+	queryset = Invoice.objects.order_by('-invoice_date')[:3]
 	if form.is_valid():
 		form.save()
 		messages.success(request, 'Successfully Saved')
