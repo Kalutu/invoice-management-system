@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% load bootstrap5 %}
+{% load static %}
 
 {% block content %}
 
-	<h1 class="text-center">{{title}}</h1>
+	<h1 class="text-center text-primary m-5 pt-5">{{title}}</h1>
   {% if messages %}
   <ul class="messages">
       {% for message in messages %}
@@ -50,7 +51,7 @@
             <td>{{instance.invoice_number}}</td>
             <td>{{instance.total_price}}</td>
             <td>{{instance.paid}}</td>
-            <td><a href="{% url 'delete' instance.id %}">Delete</a></td>
+            <td><a href="{% url 'delete' instance.id %}"><img height="30px" src="{% static 'img/del.png' %}"></a></td>
             
           </tr>
       {% endfor %}
