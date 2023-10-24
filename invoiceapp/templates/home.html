@@ -6,18 +6,4 @@
         <h1 class="text-primary m-5 pt-5">{{title}}</h1>
         <img height="500px" src="{% static 'img/invoice.jpg' %}" alt="">
     </div>
-    
-    <div class="jumbotron">
-        <div class="row">
-          <div class="col-sm-4">
-            {% block title %}
-            {% endblock %}
-
-            {% block contents %}
-            {% endblock %}
-          </div>
-          <div class="col-sm-4"></div>
-        </div>
-    </div>
-
 {% endblock %}

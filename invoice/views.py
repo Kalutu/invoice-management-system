@@ -180,8 +180,6 @@ def update_invoice(request, pk):
 @login_required
 def delete_invoice(request, pk):
 	queryset = Invoice.objects.get(id=pk)
-	if request.method == 'POST':
-		queryset.delete()
-		messages.success(request, 'Successfully Deleted')
-		return redirect('list')
-	return render(request, 'invoice/delete.html')
+	queryset.delete()
+	messages.success(request, 'Successfully Deleted')
+	return redirect('list')
