@@ -18,3 +18,19 @@ This system is designed to help businesses efficiently manage their invoices. Th
 - **Notification and Reminders**: Set up automatic notifications and reminders for upcoming due dates to help you stay on top of your invoicing.
 
 - **Export and Print**: Easily export invoices in various formats (PDF, CSV, etc.) or print them for physical records.
+
+## Usage
+1. Register and log in to the system with your user account.
+
+1. Create new invoices by providing client information, itemized details, and due dates.
+
+1. Organize and search for invoices based on your needs.
+
+1. Generate reports to gain insights into your invoicing and financial data.
+
+## Contributing
+Contributions are welcome! If you have any ideas, suggestions, or discover issues, please create a GitHub issue or fork the repository and submit a pull request.
+
+## Acknowledgments
+- Thanks to the open-source community for providing essential tools and frameworks.
+- Icons provided by [FontAwesome](https://fontawesome.com/).
