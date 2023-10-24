@@ -29,7 +29,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="/accounts/logout">
+                    <a href="{% url 'accounts:logout' %}">
                         <button class="btn btn-danger">{{ user }} | Logout</button>
                     </a>
                 </li>
@@ -37,7 +37,8 @@
         </div>
     </nav> 
     {% else %}
-    <a href="/accounts/login"><button class="btn btn-success">Login</button></a>
+    <a class="btn btn-success m-3" href="{% url 'accounts:login' %}">Login</a>
+    <a class="btn btn-info" href="{% url 'accounts:signup' %}">Signup</a>
     {% endif %}
 
     {% block content %}

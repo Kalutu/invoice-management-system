@@ -11,12 +11,6 @@ from reportlab.platypus import Image
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-def home(request):
-	title = 'Invoice Management System'
-	context = {
-	"title": title,
-	}
-	return render(request, "home.html",context)
 
 @login_required
 def add_invoice(request):
@@ -33,7 +27,7 @@ def add_invoice(request):
 		"total_invoices": total_invoices,
 		"queryset": queryset,
 	}
-	return render(request, "entry.html", context)
+	return render(request, "invoice/entry.html", context)
 
 def list_invoice(request):
 	title = 'List of Invoices'
@@ -165,7 +159,7 @@ def list_invoice(request):
 				c.save()
 
 				import_data(data_file)
-	return render(request, "list.html", context)
+	return render(request, "invoice/list.html", context)
 
 @login_required
 def update_invoice(request, pk):
@@ -181,7 +175,7 @@ def update_invoice(request, pk):
 	context = {
 		'form':form
 	}
-	return render(request, 'entry.html', context)
+	return render(request, 'invoice/entry.html', context)
 
 @login_required
 def delete_invoice(request, pk):
@@ -189,5 +183,5 @@ def delete_invoice(request, pk):
 	if request.method == 'POST':
 		queryset.delete()
 		messages.success(request, 'Successfully Deleted')
-		return redirect('/list')
-	return render(request, 'delete.html')
+		return redirect('list')
+	return render(request, 'invoice/delete.html')

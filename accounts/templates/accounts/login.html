@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+
+    <div class="container">
+        <h1 class="mb-5 mt-5">Log in</h1>
+
+        <form action="/accounts/login/" method="post">
+            {% csrf_token %}
+            <div class="row">
+                {% for field in form %}
+                <div class="col-sm-7">
+                    {% bootstrap_field field %}
+                </div>
+                {% endfor %}
+            </div>
+            <input class="btn btn-success" type="submit" value="Login">
+        </form>
+    </div>
+
+{% endblock %}

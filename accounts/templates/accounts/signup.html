@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+
+    <div class="container">
+        <h1 class="mt-5 mb-5">Sign Up</h1>
+    
+        <form action="/accounts/signup/" method="post">
+            {% csrf_token %}
+            <div class="row">
+                {% for field in form %}
+                <div class="col-sm-7">
+                    {% bootstrap_field field %}
+                </div>
+                {% endfor %}
+            </div>
+            <input class="btn btn-info" type="submit" value="Signup">
+        </form>
+    </div>
+    
+
+{% endblock %}

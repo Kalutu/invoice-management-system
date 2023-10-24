@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+
+  <form class="container" method="post" action="">
+      {% csrf_token %}
+        <h1 class="text-primary m-5 pt-5">Are you sure you want to delete?</h1><br>
+        <input class="btn btn-danger m-5" type="submit" value="Yes" />
+        <a class="btn btn-primary" href="{% url 'list' %}">Cancel</a>
+  </form>
+
+ {% endblock content %}
